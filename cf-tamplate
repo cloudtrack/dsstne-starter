@@ -1,0 +1,81 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Metadata": {
+    "AWS::CloudFormation::Designer": {
+      "bced0f6e-d335-4b7a-ba55-530e91405457": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 270,
+          "y": 160
+        },
+        "z": 0,
+        "embeds": [],
+        "ismemberof": [
+          "31094bdf-4f13-4184-8642-4bd77ea00768"
+        ]
+      },
+      "31094bdf-4f13-4184-8642-4bd77ea00768": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 370,
+          "y": 160
+        },
+        "z": 0,
+        "embeds": []
+      },
+      "d6220eeb-075b-4d26-af76-ed21b8c502bc": {
+        "source": {
+          "id": "bced0f6e-d335-4b7a-ba55-530e91405457"
+        },
+        "target": {
+          "id": "31094bdf-4f13-4184-8642-4bd77ea00768"
+        },
+        "z": 1
+      }
+    }
+  },
+  "Resources": {
+    "EC2IGF91": {
+      "Type": "AWS::EC2::Instance",
+      "Properties": {
+        "ImageId": "ami-43949554",
+        "InstanceType": "g2.2xlarge",
+        "SecurityGroupIds": [
+          {
+            "Ref": "EC2SG22SB5"
+          }
+        ]
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "bced0f6e-d335-4b7a-ba55-530e91405457"
+        }
+      }
+    },
+    "EC2SG22SB5": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Allow ssh",
+        "SecurityGroupIngress": [
+          {
+            "IpProtocol": "tcp",
+            "FromPort": "22",
+            "ToPort": "22",
+            "CidrIp": "0.0.0.0/0"
+          }
+        ]
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "31094bdf-4f13-4184-8642-4bd77ea00768"
+        }
+      }
+    }
+  }
+}
